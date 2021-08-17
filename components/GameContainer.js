@@ -60,8 +60,10 @@ function GameContainer( {game} ) {
                 <div className="flex items-center">
                     <div className="relative h-10 w-10 mr-2">
                         <Image 
-                            src="https://assets-sports.thescore.com/hockey/team/3/logo.png"
-                            layout="fill"
+                             src={mtl}
+                             layout="fill"
+                             objectFit="contain"
+                             quality={100}
                         />
                     </div>
                     <p>{game.teams.home.team.name}</p>
