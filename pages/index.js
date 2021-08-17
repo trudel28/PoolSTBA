@@ -15,14 +15,18 @@ export default function Home() {
             <div className="w-full h-full rounded-xl bg-sidney-crosby bg-cover filter-grayscale hover:filter-none transition-all ease-in">sdfs</div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className=" text-white cursor-pointer w-full bg-primary_blue  rounded-xl p-4 hover:opacity-90 active:scale-95 transition ">
-                <p className="text-lg md:text-xl">Ma Position</p>
-                <p className="text-2xl md:text-6xl text-center ">1 <span className="md:text-xl">/16</span> </p>
-              </div>
-              <div className="border w-full rounded-xl p-4 cursor-pointer hover:bg-gray-50 active:scale-95 transition">
-                <p className="text-lg md:text-xl">Total de points</p>
-                <p className="text-2xl md:text-6xl text-center">54<span className="md:text-xl"> pts</span> </p>
-              </div>
+          <button className="border bg-primary_blue rounded-xl hover:opacity-90 active:scale-95 transition">
+                <div className="flex flex-col">
+                  <p className="text-lg md:text-xl">Ma Position :</p>
+                  <p className="text-6xl text-center">1<span className="text-xl">er</span> </p>
+                </div>
+              </button>
+              <button className="border rounded-xl hover:bg-gray-50 active:scale-95 transition">
+                <div className="flex flex-col">
+                  <p className="text-lg md:text-xl">Total de points :</p>
+                  <p className="text-2xl md:text-5xl text-center">53</p>
+                </div>
+              </button>
           </div>
         </div>
         <div className="  border rounded-xl">
