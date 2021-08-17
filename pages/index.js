@@ -48,9 +48,7 @@ export default function Home({ gameData }) {
               <PlayerRow/>
             </div>
           </div>
-
       </div>
-
 
 
 

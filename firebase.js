@@ -1,5 +1,6 @@
 import firebase from"firebase";
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyA9nMl8VDb8X6FkmMjLvkr0fbV8Aq6calw",
     authDomain: "poolstba-57b3d.firebaseapp.com",
@@ -10,8 +11,12 @@ const firebaseConfig = {
     measurementId: "G-25F6QCS5RS"
   };
 
+  if(!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
 
-  firebase.initializeApp(firebaseConfig)
 
-  export default firebase;
+  const db = firebase.firestore();
+
+  export { db }
   
