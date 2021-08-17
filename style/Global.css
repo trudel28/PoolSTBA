@@ -9,10 +9,17 @@
 }
 
 @layer utilities {
+
+    .active-link{
+      @apply  bg-primary_blue hover:bg-opacity-90 transition ease-in-out text-white cursor-pointer px-4 py-4 rounded-xl text-lg font-medium;
+    }
+
+
+
     @variants dark {
       
       .filter-grayscale {
-        filter: grayscale(100%);
+        filter: grayscale(50%);
       }
     }
   }
