@@ -8,13 +8,7 @@ export default function Home({ gameData }) {
 
   const router = useRouter();
 
-
-  const goToStandingPage = () => {
-    router.push("/standing")
-  }
-
   const games = gameData.dates[0].games
-  console.log(games.length)
 
 
   return (
@@ -31,7 +25,7 @@ export default function Home({ gameData }) {
           </div>
           <div className="grid grid-cols-2 gap-4">
           <button className="border text-white bg-primary_blue rounded-xl hover:opacity-90 active:scale-95 transition">
-                <div className="flex flex-col" onClick={goToStandingPage}>
+                <div className="flex flex-col" onClick={() => router.push("/standing")}>
                   <p className="text-md md:text-xl">Ma Position :</p>
                   <p className="text-lg md:text-5xl text-center">1<span className="text-xl">er</span> </p>
                 </div>

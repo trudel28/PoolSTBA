@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from "next/link"
+import mtl from "../public/assets/mtl.png"
 
 
 function GameContainer( {game} ) {
@@ -22,7 +22,12 @@ function GameContainer( {game} ) {
         }
     }
 
-   
+    const getGameTime = () => {
+        const time = new Date(game.gameDate)
+        const formatTime = time.toLocaleTimeString().substring(5, time.length -1)
+        return formatTime;
+    } 
+
 
     const gameStarted = isGameStarted();
     const gameFinished = isGameFinished();
@@ -31,17 +36,19 @@ function GameContainer( {game} ) {
 
 
     return (
-        <div className="flex flex-col w-full border rounded-xl p-2 sm:w-[252px] cursor-pointer" onClick={()=>window.open(`https://www.nhl.com/gamecenter/${game.gamePk}#game_tab=boxscore`, "_blank")}>
-            <p>{gameStarted? gameFinished? game.status.abstractGameState : game.status.currentPeriodTimeRemaining: game.gameDate}</p>
-            <div className={gameStarted? gameFinished? "border-b border-2 border-gray-600":"border-b border-2 border-yellow-600":"border-b border-2 border-gray-300"}></div>
+        <div className="flex flex-col w-full border rounded-xl p-2 sm:w-[252px] cursor-pointer hover:bg-gray-50 active:scale-95 transition" onClick={()=>window.open(`https://www.nhl.com/gamecenter/${game.gamePk}#game_tab=boxscore`, "_blank")}>
+            <p>{gameStarted? gameFinished? game.status.abstractGameState : game.linescore.currentPeriodTimeRemaining + " " + game.linescore.currentPeriodOrdinal: getGameTime()}</p>
+            <div className={gameStarted? gameFinished? "border-b border-2 border-gray-600":"border-b border-2 border-yellow-500":"border-b border-2 border-gray-300"}></div>
 
             {/* Away Team Row */}
             <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                    <div className="relative h-10 w-10 mr-2">
+                    <div className="relative h-12 w-12 mr-2">
                         <Image 
-                            src="https://assets-sports.thescore.com/hockey/team/3/logo.png"
+                            src={mtl}
                             layout="fill"
+                            objectFit="contain"
+                            quality={100}
                         />
                     </div>
                     <p>{game.teams.away.team.name}</p>
