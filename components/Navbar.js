@@ -15,7 +15,7 @@ function Navbar() {
                 </IconButton>
                 
             </div>
-            <div className="text-icons-color flex mr-10 space-x-2">
+            <div className="text-icons-color flex space-x-2">
                 <IconButton>
                     <Badge badgeContent={4} color="secondary">
                         <ChatBubbleOutlineOutlinedIcon/>
