@@ -58,7 +58,7 @@ function GameContainer( {game} ) {
             {/* Home Team Row */}
             <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                    <div className="relative h-10 w-10 mr-2">
+                    <div className="relative h-12 w-12 mr-2">
                         <Image 
                              src={mtl}
                              layout="fill"
