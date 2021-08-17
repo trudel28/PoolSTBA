@@ -31,7 +31,7 @@ function GameContainer( {game} ) {
 
 
     return (
-        <div className="flex flex-col w-full border rounded-xl p-2 sm:w-[252px] cursor-pointer" onClick={()=>window.open(`https://www.nhl.com/gamecenter/${game.gamePk}`, "_blank")}>
+        <div className="flex flex-col w-full border rounded-xl p-2 sm:w-[252px] cursor-pointer" onClick={()=>window.open(`https://www.nhl.com/gamecenter/${game.gamePk}#game_tab=boxscore`, "_blank")}>
             <p>{gameStarted? gameFinished? game.status.abstractGameState : game.status.currentPeriodTimeRemaining: game.gameDate}</p>
             <div className={gameStarted? gameFinished? "border-b border-2 border-gray-600":"border-b border-2 border-yellow-600":"border-b border-2 border-gray-300"}></div>
 
